@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme -->
+    <style name="Theme.LexiRead" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary -->
+        <item name="colorPrimary">@color/primary_container</item>
+        <item name="colorOnPrimary">@color/on_primary_container</item>
+        <item name="colorPrimaryContainer">@color/primary</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/secondary_container</item>
+        <item name="colorOnSecondary">@color/on_secondary_container</item>
+        <item name="colorSecondaryContainer">@color/secondary</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary</item>
+
+        <!-- Tertiary -->
+        <item name="colorTertiary">@color/tertiary_container</item>
+        <item name="colorOnTertiary">@color/on_tertiary_container</item>
+        <item name="colorTertiaryContainer">@color/tertiary</item>
+        <item name="colorOnTertiaryContainer">@color/on_tertiary</item>
+
+        <!-- Background & Surface -->
+        <item name="android:colorBackground">#FF121212</item>
+        <item name="colorOnBackground">#FFE6E1E5</item>
+        <item name="colorSurface">#FF1E1E1E</item>
+        <item name="colorOnSurface">#FFE6E1E5</item>
+        <item name="colorSurfaceVariant">#FF2C2C2C</item>
+        <item name="colorOnSurfaceVariant">#FFCAC4D0</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/error_container</item>
+        <item name="colorOnError">@color/on_error_container</item>
+        <item name="colorErrorContainer">@color/error</item>
+        <item name="colorOnErrorContainer">@color/on_error</item>
+
+        <!-- Outline -->
+        <item name="colorOutline">#FF938F99</item>
+        <item name="colorOutlineVariant">#FF49454F</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">#FF121212</item>
+        <item name="android:navigationBarColor">#FF1E1E1E</item>
+    </style>
+
+    <style name="Theme.LexiRead.Splash" parent="Theme.LexiRead">
+        <item name="windowSplashScreenBackground">#FF121212</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_lexiread_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.LexiRead</item>
+    </style>
+</resources>

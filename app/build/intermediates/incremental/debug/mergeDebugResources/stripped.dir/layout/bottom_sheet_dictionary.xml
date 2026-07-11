@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_lg"
+    android:minHeight="300dp">
+
+    <!-- Drag handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/spacing_md"
+        android:background="?attr/colorOutlineVariant" />
+
+    <!-- Header row: Word + Close -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Word title -->
+            <TextView
+                android:id="@+id/tv_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                android:textStyle="bold"
+                tools:text="serendipity" />
+
+            <!-- Phonetic pronunciation -->
+            <TextView
+                android:id="@+id/tv_phonetic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone"
+                tools:text="/ˌser.ənˈdɪp.ɪ.ti/"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <!-- Close button -->
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Close"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="?attr/colorOnSurfaceVariant" />
+    </LinearLayout>
+
+    <!-- Part of speech chip -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:visibility="gone"
+        style="@style/Widget.Material3.Chip.Assist"
+        tools:text="noun"
+        tools:visibility="visible" />
+
+    <!-- Divider -->
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/spacing_sm" />
+
+    <!-- Loading spinner -->
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginVertical="@dimen/spacing_lg"
+        android:visibility="gone" />
+
+    <!-- Definition text -->
+    <TextView
+        android:id="@+id/tv_definition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:lineSpacingMultiplier="1.4"
+        tools:text="The occurrence and development of events by chance in a happy or beneficial way." />
+
+    <!-- Alternate definitions container -->
+    <LinearLayout
+        android:id="@+id/container_alternates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:visibility="gone" />
+
+    <!-- "Not the right meaning?" button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_alternate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:text="Not the right meaning?"
+        android:visibility="gone"
+        style="@style/Widget.Material3.Button.TextButton" />
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_md" />
+
+    <!-- Action buttons row -->
+    <LinearLayout
+        android:id="@+id/action_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <!-- Recent Lookups -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_recent_lookups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_marginEnd="@dimen/spacing_sm" />
+
+        <!-- Add to Highlights -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_highlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Highlights"
+            style="@style/Widget.Material3.Button.TonalButton" />
+    </LinearLayout>
+
+    <!-- ── "Word not found" empty state ── -->
+    <LinearLayout
+        android:id="@+id/empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/spacing_lg"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@android:drawable/ic_menu_help"
+            app:tint="?attr/colorOutlineVariant"
+            android:contentDescription="Not found" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:text="Word not found"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:gravity="center"
+            android:text="Check the spelling and try again.\nTip: Try the base form of the word."
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+    </LinearLayout>
+
+    <!-- ── Recent Lookups List ── -->
+    <LinearLayout
+        android:id="@+id/container_recent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/spacing_sm" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Lookups"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_marginBottom="@dimen/spacing_xs" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recent_lookups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="200dp"
+            android:nestedScrollingEnabled="true" />
+    </LinearLayout>
+
+</LinearLayout>

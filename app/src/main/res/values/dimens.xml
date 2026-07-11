@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+
+    <!-- Corner Radius -->
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">12dp</dimen>
+    <dimen name="radius_lg">16dp</dimen>
+    <dimen name="radius_xl">28dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_sm">2dp</dimen>
+    <dimen name="elevation_md">4dp</dimen>
+    <dimen name="elevation_lg">8dp</dimen>
+
+    <!-- Book Card -->
+    <dimen name="book_card_width">120dp</dimen>
+    <dimen name="book_card_height">180dp</dimen>
+    <dimen name="book_cover_radius">8dp</dimen>
+
+    <!-- Reader -->
+    <dimen name="reader_padding_horizontal">24dp</dimen>
+    <dimen name="reader_padding_vertical">16dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_xs">12sp</dimen>
+    <dimen name="text_sm">14sp</dimen>
+    <dimen name="text_md">16sp</dimen>
+    <dimen name="text_lg">20sp</dimen>
+    <dimen name="text_xl">24sp</dimen>
+    <dimen name="text_xxl">32sp</dimen>
+
+    <!-- FAB inset from fragment bottom so it clears the bottom navigation bar -->
+    <dimen name="fab_margin_bottom">88dp</dimen>
+</resources>

@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/progress_dialog.xml",
+        "source": "com.lexiread.app-main-90:/layout/progress_dialog.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/fragment_settings.xml",
+        "source": "com.lexiread.app-main-90:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/item_book_card.xml",
+        "source": "com.lexiread.app-main-90:/layout/item_book_card.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/fragment_home.xml",
+        "source": "com.lexiread.app-main-90:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/item_recent_lookup.xml",
+        "source": "com.lexiread.app-main-90:/layout/item_recent_lookup.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/fragment_annotations.xml",
+        "source": "com.lexiread.app-main-90:/layout/fragment_annotations.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/activity_main.xml",
+        "source": "com.lexiread.app-main-90:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/bottom_sheet_dictionary.xml",
+        "source": "com.lexiread.app-main-90:/layout/bottom_sheet_dictionary.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/fragment_auth.xml",
+        "source": "com.lexiread.app-main-90:/layout/fragment_auth.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/fragment_splash.xml",
+        "source": "com.lexiread.app-main-90:/layout/fragment_splash.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/fragment_reader.xml",
+        "source": "com.lexiread.app-main-90:/layout/fragment_reader.xml"
+    },
+    {
+        "merged": "com.lexiread.app-mergeDebugResources-87:/layout/bottom_sheet_import.xml",
+        "source": "com.lexiread.app-main-90:/layout/bottom_sheet_import.xml"
+    }
+]

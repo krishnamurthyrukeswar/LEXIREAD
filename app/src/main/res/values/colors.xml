@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="primary">#FF1B6B93</color>
+    <color name="primary_variant">#FF14506E</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="primary_container">#FFD1E4F0</color>
+    <color name="on_primary_container">#FF062A3A</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#FF4CA1AF</color>
+    <color name="secondary_variant">#FF2D8A99</color>
+    <color name="on_secondary">#FFFFFFFF</color>
+    <color name="secondary_container">#FFCDE9EE</color>
+    <color name="on_secondary_container">#FF0A3A42</color>
+
+    <!-- Tertiary Colors -->
+    <color name="tertiary">#FFE8A838</color>
+    <color name="on_tertiary">#FF3B2700</color>
+    <color name="tertiary_container">#FFFFF0D6</color>
+    <color name="on_tertiary_container">#FF4A3000</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#FFFAFAFA</color>
+    <color name="background_light">#FFF5F5F5</color>
+    <color name="search_bar_bg">#FFF0F2F5</color>
+    <color name="on_background">#FF1C1B1F</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="on_surface">#FF1C1B1F</color>
+    <color name="surface_variant">#FFF2F2F2</color>
+    <color name="on_surface_variant">#FF49454F</color>
+
+    <!-- Error -->
+    <color name="error">#FFB3261E</color>
+    <color name="on_error">#FFFFFFFF</color>
+    <color name="error_container">#FFF9DEDC</color>
+    <color name="on_error_container">#FF410E0B</color>
+
+    <!-- Outline & Divider -->
+    <color name="outline">#FF79747E</color>
+    <color name="outline_variant">#FFCAC4D0</color>
+
+    <!-- Highlight Colors (semi-transparent for text background spans) -->
+    <color name="highlight_yellow">#80FFEB3B</color>
+    <color name="highlight_green">#804CAF50</color>
+    <color name="highlight_blue">#802196F3</color>
+    <color name="highlight_pink">#80E91E63</color>
+    <color name="highlight_orange">#80FF9800</color>
+
+    <!-- Highlight Picker Colors (solid, for color selection UI) -->
+    <color name="picker_yellow">#FFD700</color>
+    <color name="picker_green">#90EE90</color>
+    <color name="picker_pink">#FFB6C1</color>
+    <color name="picker_blue">#ADD8E6</color>
+    <color name="picker_orange">#FFA500</color>
+
+    <!-- Reader Themes: Light -->
+    <color name="reader_bg_light">#FFFFFFFF</color>
+    <color name="reader_text_light">#FF212121</color>
+
+    <!-- Reader Themes: Dark -->
+    <color name="reader_bg_dark">#FF1E1E1E</color>
+    <color name="reader_text_dark">#FFE0E0E0</color>
+
+    <!-- Reader Themes: Sepia -->
+    <color name="reader_bg_sepia">#FFF5ECDA</color>
+    <color name="reader_text_sepia">#FF5B4636</color>
+
+    <!-- Reader Themes: AMOLED Black -->
+    <color name="reader_bg_amoled">#FF000000</color>
+    <color name="reader_text_amoled">#FFFFFFFF</color>
+
+    <!-- Theme selector circle colors (for settings UI) -->
+    <color name="theme_circle_light">#FFFFFFFF</color>
+    <color name="theme_circle_dark">#FF1E1E1E</color>
+    <color name="theme_circle_sepia">#FFF5ECDA</color>
+    <color name="theme_circle_amoled">#FF000000</color>
+    <color name="theme_circle_custom">#FF9C27B0</color>
+</resources>

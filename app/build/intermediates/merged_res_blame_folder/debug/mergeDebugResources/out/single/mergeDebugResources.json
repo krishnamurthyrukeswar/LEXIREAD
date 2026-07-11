@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_activity_main.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/drawable_circle_color_swatch.xml.flat",
+        "source": "com.lexiread.app-main-90:/drawable/circle_color_swatch.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_fragment_home.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_progress_dialog.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/progress_dialog.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_fragment_splash.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/fragment_splash.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.lexiread.app-main-90:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_item_book_card.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/item_book_card.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_fragment_auth.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/fragment_auth.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_bottom_sheet_import.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/bottom_sheet_import.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/drawable_ic_lexiread_launcher.xml.flat",
+        "source": "com.lexiread.app-main-90:/drawable/ic_lexiread_launcher.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_fragment_annotations.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/fragment_annotations.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_bottom_sheet_dictionary.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/bottom_sheet_dictionary.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/navigation_nav_graph.xml.flat",
+        "source": "com.lexiread.app-main-90:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/drawable_ic_empty_library.xml.flat",
+        "source": "com.lexiread.app-main-90:/drawable/ic_empty_library.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_fragment_settings.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_item_recent_lookup.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/item_recent_lookup.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/layout_fragment_reader.xml.flat",
+        "source": "com.lexiread.app-main-90:/layout/fragment_reader.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/drawable_ic_book_placeholder.xml.flat",
+        "source": "com.lexiread.app-main-90:/drawable/ic_book_placeholder.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/xml_backup_rules.xml.flat",
+        "source": "com.lexiread.app-main-90:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.lexiread.app-debug-88:/xml_data_extraction_rules.xml.flat",
+        "source": "com.lexiread.app-main-90:/xml/data_extraction_rules.xml"
+    }
+]

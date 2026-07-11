@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reader_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reader_bg_light">
+
+    <!-- ── Reader Content Container ── -->
+    <FrameLayout
+        android:id="@+id/reader_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- PDF View -->
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdf_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- TXT Reader -->
+        <com.lexiread.app.ui.reader.ZoomableScrollView
+            android:id="@+id/txt_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/tv_txt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/reader_padding_horizontal"
+                android:textIsSelectable="true"
+                android:textSize="16sp"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/reader_text_light"
+                tools:text="Lorem ipsum dolor sit amet..." />
+        </com.lexiread.app.ui.reader.ZoomableScrollView>
+
+        <!-- Loading -->
+        <ProgressBar
+            android:id="@+id/progress_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <!-- ── Top Bar (toggled on tap) ── -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/reader_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#CC000000"
+            app:navigationIcon="@android:drawable/ic_menu_revert"
+            app:titleTextColor="@android:color/white"
+            app:subtitleTextColor="#B0FFFFFF"
+            tools:title="Book Title"
+            tools:subtitle="Chapter 1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:layout_marginEnd="8dp">
+
+                <!-- Search inside book -->
+                <ImageButton
+                    android:id="@+id/btn_search_in_book"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Search"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="@android:color/white" />
+
+                <!-- Bookmark Button -->
+                <ImageButton
+                    android:id="@+id/btn_bookmark"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Bookmark"
+                    android:src="@android:drawable/btn_star"
+                    app:tint="@android:color/white" />
+
+                <!-- More options -->
+                <ImageButton
+                    android:id="@+id/btn_more_options"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="More"
+                    android:src="@android:drawable/ic_menu_more"
+                    app:tint="@android:color/white" />
+            </LinearLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ── Bottom Bar (toggled on tap) ── -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#CC000000"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/spacing_md"
+        android:paddingVertical="@dimen/spacing_sm">
+
+        <!-- Seekable progress slider -->
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0"
+            android:valueTo="100"
+            android:value="0"
+            android:stepSize="1"
+            app:thumbColor="@android:color/white"
+            app:trackColorActive="@android:color/white"
+            app:trackColorInactive="#55FFFFFF"
+            app:tickVisible="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Page indicator -->
+            <TextView
+                android:id="@+id/tv_page_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_sm"
+                tools:text="Page 12 of 340" />
+
+            <!-- Reading time remaining -->
+            <TextView
+                android:id="@+id/tv_time_remaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#B0FFFFFF"
+                android:textSize="@dimen/text_xs"
+                tools:text="1h 24m left" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

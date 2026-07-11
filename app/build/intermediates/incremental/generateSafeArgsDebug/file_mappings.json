@@ -1,0 +1,1 @@
+[{"navFile":"src\\main\\res\\navigation\\nav_graph.xml","javaFiles":["com.lexiread.app.ui.splash.SplashFragmentDirections","com.lexiread.app.ui.auth.AuthFragmentDirections","com.lexiread.app.ui.home.HomeFragmentDirections","com.lexiread.app.ui.reader.ReaderFragmentArgs"]}]

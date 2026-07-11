@@ -1,0 +1,296 @@
+﻿Folder PATH listing for volume New Volume
+Volume serial number is 000000CE 3A52:0B23
+D:\LEXIREAD
+|   build.gradle.kts
+|   gradle.properties
+|   gradlew
+|   gradlew.bat
+|   settings.gradle.kts
+|   tree.txt
+|   
++---.gradle
+|   |   file-system.probe
+|   |   
+|   +---8.9
+|   |   |   gc.properties
+|   |   |   
+|   |   +---checksums
+|   |   |       checksums.lock
+|   |   |       md5-checksums.bin
+|   |   |       sha1-checksums.bin
+|   |   |       
+|   |   +---dependencies-accessors
+|   |   |   |   gc.properties
+|   |   |   |   
+|   |   |   \---dc42841172752a91d78b1826235cc475f2267427
+|   |   |       |   metadata.bin
+|   |   |       |   
+|   |   |       +---classes
+|   |   |       |   \---org
+|   |   |       |       \---gradle
+|   |   |       |           \---accessors
+|   |   |       |               \---dm
+|   |   |       |                       LibrariesForLibs$AndroidPluginAccessors.class
+|   |   |       |                       LibrariesForLibs$AndroidxCoreLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$AndroidxLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$BundleAccessors.class
+|   |   |       |                       LibrariesForLibs$CoroutinesLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$DatastoreLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$EspressoLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$FirebaseCrashlyticsPluginAccessors.class
+|   |   |       |                       LibrariesForLibs$FirebaseLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$FirebasePluginAccessors.class
+|   |   |       |                       LibrariesForLibs$FolioLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$GlideLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$GooglePluginAccessors.class
+|   |   |       |                       LibrariesForLibs$HiltLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$JunitLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$KotlinPluginAccessors.class
+|   |   |       |                       LibrariesForLibs$LifecycleLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$NavigationLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$NavigationPluginAccessors.class
+|   |   |       |                       LibrariesForLibs$OkhttpLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$PdfLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$PluginAccessors.class
+|   |   |       |                       LibrariesForLibs$RetrofitLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$RoomLibraryAccessors.class
+|   |   |       |                       LibrariesForLibs$VersionAccessors.class
+|   |   |       |                       LibrariesForLibs.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$AndroidxCoreLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$AndroidxLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$BundleAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$CoroutinesLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$DatastoreLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$EspressoLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$FirebaseCrashlyticsPluginAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$FirebaseLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$FirebasePluginAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$FolioLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$GlideLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$GooglePluginAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$HiltLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$JunitLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$KotlinPluginAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$LifecycleLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$NavigationLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$NavigationPluginAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$OkhttpLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$PdfLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$PluginAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$RetrofitLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$RoomLibraryAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock$VersionAccessors.class
+|   |   |       |                       LibrariesForLibsInPluginsBlock.class
+|   |   |       |                       
+|   |   |       \---sources
+|   |   |           \---org
+|   |   |               \---gradle
+|   |   |                   \---accessors
+|   |   |                       \---dm
+|   |   |                               LibrariesForLibs.java
+|   |   |                               LibrariesForLibsInPluginsBlock.java
+|   |   |                               
+|   |   +---executionHistory
+|   |   |       executionHistory.bin
+|   |   |       executionHistory.lock
+|   |   |       
+|   |   +---expanded
+|   |   +---fileChanges
+|   |   |       last-build.bin
+|   |   |       
+|   |   +---fileHashes
+|   |   |       fileHashes.bin
+|   |   |       fileHashes.lock
+|   |   |       resourceHashesCache.bin
+|   |   |       
+|   |   \---vcsMetadata
+|   +---buildOutputCleanup
+|   |       buildOutputCleanup.lock
+|   |       cache.properties
+|   |       outputFiles.bin
+|   |       
+|   \---vcs-1
+|           gc.properties
+|           
++---app
+|   |   build.gradle.kts
+|   |   proguard-rules.pro
+|   |   
+|   \---src
+|       +---androidTest
+|       |   \---java
+|       |       \---com
+|       |           \---lexiread
+|       |               \---app
+|       |                       ExampleInstrumentedTest.kt
+|       |                       
+|       +---main
+|       |   |   AndroidManifest.xml
+|       |   |   
+|       |   +---assets
+|       |   |   |   DICTIONARY_README.md
+|       |   |   |   privacy_policy.html
+|       |   |   |   
+|       |   |   \---fonts
+|       |   |           FONTS_README.md
+|       |   |           
+|       |   +---java
+|       |   |   \---com
+|       |   |       \---lexiread
+|       |   |           \---app
+|       |   |               |   LexiReadApp.kt
+|       |   |               |   
+|       |   |               +---data
+|       |   |               |   +---local
+|       |   |               |   |   +---dao
+|       |   |               |   |   |       BookDao.kt
+|       |   |               |   |   |       BookmarkDao.kt
+|       |   |               |   |   |       DictionaryCacheDao.kt
+|       |   |               |   |   |       HighlightDao.kt
+|       |   |               |   |   |       NoteDao.kt
+|       |   |               |   |   |       ReadingProgressDao.kt
+|       |   |               |   |   |       
+|       |   |               |   |   +---datastore
+|       |   |               |   |   |       UserPreferences.kt
+|       |   |               |   |   |       
+|       |   |               |   |   +---db
+|       |   |               |   |   |       LexiReadDatabase.kt
+|       |   |               |   |   |       
+|       |   |               |   |   +---dictionary
+|       |   |               |   |   |       DictionaryDatabaseHelper.kt
+|       |   |               |   |   |       
+|       |   |               |   |   +---entity
+|       |   |               |   |   |       BookEntity.kt
+|       |   |               |   |   |       BookmarkEntity.kt
+|       |   |               |   |   |       DictionaryCacheEntity.kt
+|       |   |               |   |   |       HighlightEntity.kt
+|       |   |               |   |   |       NoteEntity.kt
+|       |   |               |   |   |       ReadingProgressEntity.kt
+|       |   |               |   |   |       
+|       |   |               |   |   \---file
+|       |   |               |   |           FileManager.kt
+|       |   |               |   |           
+|       |   |               |   +---mapper
+|       |   |               |   |       BookMapper.kt
+|       |   |               |   |       
+|       |   |               |   +---remote
+|       |   |               |   |   +---api
+|       |   |               |   |   |       GoogleBooksApi.kt
+|       |   |               |   |   |       
+|       |   |               |   |   \---dto
+|       |   |               |   |           GoogleBooksResponse.kt
+|       |   |               |   |           
+|       |   |               |   \---repository
+|       |   |               |           BookRepositoryImpl.kt
+|       |   |               |           DictionaryRepositoryImpl.kt
+|       |   |               |           ReadingProgressRepositoryImpl.kt
+|       |   |               |           
+|       |   |               +---di
+|       |   |               |       AppModule.kt
+|       |   |               |       DatabaseModule.kt
+|       |   |               |       DataStoreModule.kt
+|       |   |               |       NetworkModule.kt
+|       |   |               |       RepositoryModule.kt
+|       |   |               |       
+|       |   |               +---domain
+|       |   |               |   +---model
+|       |   |               |   |       Annotations.kt
+|       |   |               |   |       Book.kt
+|       |   |               |   |       
+|       |   |               |   \---repository
+|       |   |               |           BookRepository.kt
+|       |   |               |           DictionaryRepository.kt
+|       |   |               |           ReadingProgressRepository.kt
+|       |   |               |           
+|       |   |               +---ui
+|       |   |               |   |   MainActivity.kt
+|       |   |               |   |   
+|       |   |               |   +---annotations
+|       |   |               |   |       AnnotationsFragment.kt
+|       |   |               |   |       
+|       |   |               |   +---auth
+|       |   |               |   |       AuthFragment.kt
+|       |   |               |   |       
+|       |   |               |   +---dictionary
+|       |   |               |   |       DictionaryBottomSheet.kt
+|       |   |               |   |       DictionaryViewModel.kt
+|       |   |               |   |       
+|       |   |               |   +---home
+|       |   |               |   |       BookAdapter.kt
+|       |   |               |   |       HomeFragment.kt
+|       |   |               |   |       HomeViewModel.kt
+|       |   |               |   |       ImportBottomSheet.kt
+|       |   |               |   |       
+|       |   |               |   +---reader
+|       |   |               |   |       ReaderFragment.kt
+|       |   |               |   |       ReaderViewModel.kt
+|       |   |               |   |       TextSelectionCallback.kt
+|       |   |               |   |       ZoomableScrollView.kt
+|       |   |               |   |       
+|       |   |               |   +---settings
+|       |   |               |   |       SettingsFragment.kt
+|       |   |               |   |       SettingsViewModel.kt
+|       |   |               |   |       
+|       |   |               |   \---splash
+|       |   |               |           SplashFragment.kt
+|       |   |               |           
+|       |   |               \---utils
+|       |   |                       Constants.kt
+|       |   |                       Extensions.kt
+|       |   |                       FontHelper.kt
+|       |   |                       Resource.kt
+|       |   |                       UiState.kt
+|       |   |                       
+|       |   \---res
+|       |       +---drawable
+|       |       |       circle_color_swatch.xml
+|       |       |       ic_book_placeholder.xml
+|       |       |       ic_empty_library.xml
+|       |       |       
+|       |       +---layout
+|       |       |       activity_main.xml
+|       |       |       bottom_sheet_dictionary.xml
+|       |       |       bottom_sheet_import.xml
+|       |       |       fragment_annotations.xml
+|       |       |       fragment_auth.xml
+|       |       |       fragment_home.xml
+|       |       |       fragment_reader.xml
+|       |       |       fragment_settings.xml
+|       |       |       fragment_splash.xml
+|       |       |       item_book_card.xml
+|       |       |       item_recent_lookup.xml
+|       |       |       
+|       |       +---menu
+|       |       |       bottom_nav_menu.xml
+|       |       |       
+|       |       +---navigation
+|       |       |       nav_graph.xml
+|       |       |       
+|       |       +---values
+|       |       |       colors.xml
+|       |       |       dimens.xml
+|       |       |       strings.xml
+|       |       |       themes.xml
+|       |       |       
+|       |       +---values-night
+|       |       |       themes.xml
+|       |       |       
+|       |       \---xml
+|       |               backup_rules.xml
+|       |               data_extraction_rules.xml
+|       |               
+|       \---test
+|           \---java
+|               \---com
+|                   \---lexiread
+|                       \---app
+|                               ExampleUnitTest.kt
+|                               
+\---gradle
+    |   libs.versions.toml
+    |   
+    \---wrapper
+            gradle-wrapper.jar
+            gradle-wrapper.properties
+            
