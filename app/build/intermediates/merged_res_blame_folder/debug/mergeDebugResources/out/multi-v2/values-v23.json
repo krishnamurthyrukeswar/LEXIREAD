@@ -4,36 +4,7 @@
             "outputFile": "com.lexiread.app-mergeDebugResources-86:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\64723f379a6fb8e60a9b74118dce22fe\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "3361",
-                        "endLines": "54",
-                        "endColumns": "12",
-                        "endOffsets": "3506"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\1acf778c870fc45481ef360fcbb575be\\transformed\\work-runtime-2.8.1\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,121",
-                        "endColumns": "65,62",
-                        "endOffsets": "116,179"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\dbf02e90aa47f5111c674e49e4d83ece\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\770f539c9a66429860376a7df338cc10\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,7 +23,36 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\dd339b1ffe2e0f390cb72cde2f385c2e\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\96b59df1f9a121fff4a3305be89cfdd8\\transformed\\work-runtime-2.8.1\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\e82b5d2f1162fbebb78af03897034b8a\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "3361",
+                        "endLines": "54",
+                        "endColumns": "12",
+                        "endOffsets": "3506"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\606771d9160f3f8ebc5c284c7d8c2279\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

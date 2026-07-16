@@ -4,7 +4,7 @@
             "outputFile": "com.lexiread.app-mergeDebugResources-86:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\dbf02e90aa47f5111c674e49e4d83ece\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\770f539c9a66429860376a7df338cc10\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

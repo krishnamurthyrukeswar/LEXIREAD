@@ -79,7 +79,7 @@ class DictionaryDatabaseHelper @Inject constructor(
 
         try {
             val cursor = db.rawQuery(
-                "SELECT definition FROM dictionary WHERE word = ? COLLATE NOCASE",
+                "SELECT meaning FROM dictionary WHERE word = ? COLLATE NOCASE",
                 arrayOf(word)
             )
             cursor.use {

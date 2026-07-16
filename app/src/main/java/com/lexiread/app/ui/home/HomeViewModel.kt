@@ -46,11 +46,15 @@ class HomeViewModel @Inject constructor(
     private val _events = MutableSharedFlow<HomeEvent>()
     val events = _events.asSharedFlow()
 
+    // ── Refresh trigger ──
+    private val _refreshTrigger = MutableStateFlow(0)
+
     // ── Books list (reactive to tab + search query + progress) ──
     val books: StateFlow<UiState<List<BookAdapterItem>>> = combine(
         _selectedTab,
-        _searchQuery
-    ) { tab, query ->
+        _searchQuery,
+        _refreshTrigger
+    ) { tab, query, _ ->
         Pair(tab, query)
     }.flatMapLatest { (tab, query) ->
         val bookFlow = when {
@@ -58,7 +62,7 @@ class HomeViewModel @Inject constructor(
             tab == LibraryTab.RECENT -> bookRepository.getRecentBooks()
             else -> bookRepository.getAllBooks()
         }
-        
+
         combine(bookFlow, progressRepository.getAllProgress()) { books, progressList ->
             books.map { book ->
                 val progress = progressList.find { it.bookId == book.id }
@@ -68,21 +72,17 @@ class HomeViewModel @Inject constructor(
             emit(emptyList())
             _events.emit(HomeEvent.ShowError(e.message ?: "Failed to load books"))
         }
-    }.combine(_searchQuery) { bookItems, query ->
-        if (bookItems.isEmpty() && query.isBlank()) {
-            UiState.Idle // Show empty state
-        } else {
-            UiState.Success(bookItems)
-        }
+    }.combine(_searchQuery) { bookItems, _ ->
+        UiState.Success(bookItems)
     }.stateIn(
         scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
+        started = SharingStarted.Eagerly,
         initialValue = UiState.Loading
     )
 
     // ── Book count ──
     val bookCount: StateFlow<Int> = bookRepository.getBookCount()
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+        .stateIn(viewModelScope, SharingStarted.Eagerly, 0)
 
     // ── Actions ──
 
@@ -147,6 +147,10 @@ class HomeViewModel @Inject constructor(
             bookRepository.updateLastOpened(book.id)
             _events.emit(HomeEvent.NavigateToReader(book.id))
         }
+    }
+
+    fun forceRefresh() {
+        _refreshTrigger.value++
     }
 
     fun resetImportState() {

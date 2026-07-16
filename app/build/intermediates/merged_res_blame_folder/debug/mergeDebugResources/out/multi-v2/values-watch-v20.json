@@ -4,7 +4,7 @@
             "outputFile": "com.lexiread.app-mergeDebugResources-86:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\dbf02e90aa47f5111c674e49e4d83ece\\transformed\\appcompat-1.7.0\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\770f539c9a66429860376a7df338cc10\\transformed\\appcompat-1.7.0\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\ee81f6b6881fabd21f6e0c503e5b8a13\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\e4853a286cac2f610f2206b89a5ed147\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

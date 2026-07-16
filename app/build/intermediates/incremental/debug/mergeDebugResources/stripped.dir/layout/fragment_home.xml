@@ -8,8 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="80dp">
+        android:orientation="vertical">
 
         <!-- App Title -->
         <TextView
@@ -32,21 +31,6 @@
             android:hint="@string/search_books"
             app:backgroundTint="@color/search_bar_bg"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
-
-        <!-- Search View (expandable) -->
-        <com.google.android.material.search.SearchView
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_anchor="@id/search_bar">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_search_results"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:padding="@dimen/spacing_sm" />
-        </com.google.android.material.search.SearchView>
 
         <!-- Tabs: My Library / Recent -->
         <com.google.android.material.tabs.TabLayout
@@ -83,6 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
+                    android:paddingBottom="80dp"
                     android:padding="@dimen/spacing_sm" />
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -135,20 +120,34 @@
         </FrameLayout>
     </LinearLayout>
 
-    <!-- FAB: clears activity BottomNavigationView (sibling drawn on top of nav host) -->
+    <!-- SearchView as full-screen overlay anchored to SearchBar -->
+    <com.google.android.material.search.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@id/search_bar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/spacing_sm" />
+
+    </com.google.android.material.search.SearchView>
+
+    <!-- FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginHorizontal="@dimen/spacing_md"
-        android:layout_marginBottom="88dp"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:layout_marginBottom="160dp"
         android:contentDescription="@string/import_book"
-        android:visibility="visible"
-        app:layout_behavior="com.google.android.material.floatingactionbutton.FloatingActionButton$Behavior"
+        app:backgroundTint="#1E88E5"
         app:elevation="@dimen/elevation_lg"
         app:srcCompat="@android:drawable/ic_input_add"
-        app:tint="@android:color/white"
-        app:backgroundTint="#1E88E5" />
+        app:tint="@android:color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

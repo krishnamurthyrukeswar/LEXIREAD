@@ -45,7 +45,10 @@ class HomeFragment : Fragment() {
     private val filePickerLauncher = registerForActivityResult(
         ActivityResultContracts.OpenDocument()
     ) { uri ->
-        uri?.let { viewModel.importBook(it) }
+        if (uri != null) {
+            viewModel.importBook(uri)
+            binding.root.postDelayed({ viewModel.forceRefresh() }, 2000)
+        }
     }
 
     // ── Permission request ──
@@ -145,6 +148,8 @@ class HomeFragment : Fragment() {
     // ── FAB ──
 
     private fun setupFab() {
+        binding.fabAddBook.visibility = View.VISIBLE
+        binding.fabAddBook.bringToFront()
         binding.fabAddBook.setOnClickListener {
             requestStorageAndPick()
         }
@@ -254,103 +259,104 @@ class HomeFragment : Fragment() {
     // ── Observe ViewModel State ──
 
     private fun observeState() {
+        // Books list
         viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-
-                // Books list
-                launch {
-                    viewModel.books.collect { state ->
-                        when (state) {
-                            is UiState.Loading -> {
-                                binding.progressLoading.show()
-                                binding.rvBooks.hide()
-                                binding.emptyState.hide()
-                            }
-                            is UiState.Idle -> {
-                                binding.progressLoading.hide()
-                                binding.rvBooks.hide()
-                                binding.emptyState.show()
-                            }
-                            is UiState.Success -> {
-                                binding.progressLoading.hide()
-                                if (state.data.isEmpty()) {
-                                    binding.emptyState.show()
-                                    binding.rvBooks.hide()
-                                } else {
-                                    binding.emptyState.hide()
-                                    binding.rvBooks.show()
-                                    bookAdapter.submitList(state.data)
-                                }
-                            }
-                            is UiState.Error -> {
-                                binding.progressLoading.hide()
-                                binding.emptyState.show()
-                                binding.rvBooks.hide()
-                            }
-                        }
-                        binding.swipeRefresh.isRefreshing = false
+            viewModel.books.collect { state ->
+                when (state) {
+                    is UiState.Loading -> {
+                        binding.progressLoading.show()
+                        binding.rvBooks.hide()
+                        binding.emptyState.hide()
                     }
-                }
-
-                // Import state
-                launch {
-                    viewModel.importState.collect { state ->
-                        when (state) {
-                            is UiState.Loading -> {
-                                binding.progressLoading.show()
-                            }
-                            is UiState.Success -> {
-                                binding.progressLoading.hide()
-                                viewModel.resetImportState()
-                            }
-                            is UiState.Error -> {
-                                binding.progressLoading.hide()
-                                viewModel.resetImportState()
-                            }
-                            is UiState.Idle -> {
-                                // no-op
-                            }
+                    is UiState.Idle -> {
+                        binding.progressLoading.hide()
+                        binding.rvBooks.hide()
+                        binding.emptyState.show()
+                    }
+                    is UiState.Success -> {
+                        binding.progressLoading.hide()
+                        if (state.data.isEmpty()) {
+                            binding.emptyState.show()
+                            binding.rvBooks.hide()
+                        } else {
+                            binding.emptyState.hide()
+                            binding.rvBooks.show()
+                            bookAdapter.submitList(null)
+                            bookAdapter.submitList(state.data)
                         }
                     }
-                }
-
-                // One-shot events (toasts, navigation)
-                launch {
-                    viewModel.events.collect { event ->
-                        when (event) {
-                            is HomeEvent.ShowSuccess -> {
-                                view?.let {
-                                    Snackbar.make(it, event.message, Snackbar.LENGTH_SHORT).show()
-                                }
-                            }
-                            is HomeEvent.ShowError -> {
-                                view?.let {
-                                    Snackbar.make(it, event.message, Snackbar.LENGTH_LONG)
-                                        .setBackgroundTint(
-                                            requireContext().getColor(R.color.error)
-                                        )
-                                        .show()
-                                }
-                            }
-                            is HomeEvent.NavigateToReader -> {
-                                findNavController().navigate(
-                                    HomeFragmentDirections.actionHomeToReader(event.bookId)
-                                )
-                            }
-                        }
+                    is UiState.Error -> {
+                        binding.progressLoading.hide()
+                        binding.emptyState.show()
+                        binding.rvBooks.hide()
                     }
                 }
+                binding.swipeRefresh.isRefreshing = false
+            }
+        }
 
-                // Search results (update search adapter when search view is active)
-                launch {
-                    viewModel.books.collect { state ->
-                        if (state is UiState.Success) {
-                            searchAdapter.submitList(state.data)
-                        }
+        // Import state
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.importState.collect { state ->
+                when (state) {
+                    is UiState.Loading -> {
+                        binding.progressLoading.show()
+                    }
+                    is UiState.Success -> {
+                        binding.progressLoading.hide()
+                        viewModel.resetImportState()
+                    }
+                    is UiState.Error -> {
+                        binding.progressLoading.hide()
+                        viewModel.resetImportState()
+                    }
+                    is UiState.Idle -> {
+                        // no-op
                     }
                 }
             }
         }
+
+        // One-shot events (toasts, navigation)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.events.collect { event ->
+                when (event) {
+                    is HomeEvent.ShowSuccess -> {
+                        view?.let {
+                            Snackbar.make(it, event.message, Snackbar.LENGTH_SHORT).show()
+                        }
+                    }
+                    is HomeEvent.ShowError -> {
+                        view?.let {
+                            Snackbar.make(it, event.message, Snackbar.LENGTH_LONG)
+                                .setBackgroundTint(
+                                    requireContext().getColor(R.color.error)
+                                )
+                                .show()
+                        }
+                    }
+                    is HomeEvent.NavigateToReader -> {
+                        findNavController().navigate(
+                            HomeFragmentDirections.actionHomeToReader(event.bookId)
+                        )
+                    }
+                }
+            }
+        }
+
+        // Search results
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.books.collect { state ->
+                if (state is UiState.Success) {
+                    searchAdapter.submitList(state.data)
+                }
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.forceRefresh()
     }
 
     override fun onDestroyView() {

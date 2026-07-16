@@ -4,7 +4,7 @@
             "outputFile": "com.lexiread.app-mergeDebugResources-86:/values-v29/values-v29.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.11.1\\transforms\\ee81f6b6881fabd21f6e0c503e5b8a13\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-v29\\values-v29.xml",
+                    "source": "C:\\Users\\rukeswar\\.gradle\\caches\\8.10.2\\transforms\\e4853a286cac2f610f2206b89a5ed147\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-v29\\values-v29.xml",
                     "from": {
                         "startLines": "2,7",
                         "startColumns": "4,4",
