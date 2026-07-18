@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <full-backup-content>
-    <include domain="database" path="lexiread_database" />
-    <include domain="sharedpref" path="." />
-    <exclude domain="database" path="lexiread_database-wal" />
-    <exclude domain="database" path="lexiread_database-shm" />
-    <exclude domain="no_backup" path="." />
+    <include domain="database" path="lexiread_database"/>
+    <include domain="sharedpref" path="."/>
+    <exclude domain="database" path="lexiread_database-wal"/>
+    <exclude domain="database" path="lexiread_database-shm"/>
 </full-backup-content>
