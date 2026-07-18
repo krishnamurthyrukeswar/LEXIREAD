@@ -1,1 +1,0 @@
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.dictionary.DictionaryViewModel

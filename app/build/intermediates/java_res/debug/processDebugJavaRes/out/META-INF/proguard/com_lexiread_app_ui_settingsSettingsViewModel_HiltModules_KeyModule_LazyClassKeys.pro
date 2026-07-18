@@ -1,8 +1,0 @@
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.dictionary.DictionaryViewModel
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.dictionary.DictionaryViewModel
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.home.HomeViewModel
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.home.HomeViewModel
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.reader.ReaderViewModel
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.reader.ReaderViewModel
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.settings.SettingsViewModel
--keep,allowobfuscation,allowshrinking class com.lexiread.app.ui.settings.SettingsViewModel
