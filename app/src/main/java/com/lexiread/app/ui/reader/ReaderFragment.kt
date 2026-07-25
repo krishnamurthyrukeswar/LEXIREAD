@@ -31,6 +31,16 @@ import com.lexiread.app.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.io.File
+import androidx.core.os.bundleOf
+import androidx.fragment.app.commitNow
+import org.readium.r2.navigator.epub.EpubNavigatorFactory
+import org.readium.r2.navigator.epub.EpubNavigatorFragment
+import org.readium.r2.shared.publication.Publication
+import org.readium.r2.shared.util.toUrl
+import org.readium.r2.shared.util.http.DefaultHttpClient
+import org.readium.r2.shared.util.asset.AssetRetriever
+import org.readium.r2.streamer.PublicationOpener
+import org.readium.r2.streamer.parser.DefaultPublicationParser
 
 @AndroidEntryPoint
 class ReaderFragment : Fragment() {
@@ -44,6 +54,9 @@ class ReaderFragment : Fragment() {
     private var isSliderTracking = false
     private var isTxtReaderActive = false
     private var estimatedTxtPages = 1
+
+    // Readium 3
+    private var publication: Publication? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -406,18 +419,76 @@ class ReaderFragment : Fragment() {
     }
 
     // ═══════════════════════════════════
-    //  EPUB Reader (FolioReader launcher)
+    //  EPUB Reader (Readium 3)
     // ═══════════════════════════════════
 
     private fun setupEpubReader(file: File, book: Book) {
-        // TODO: Implement Readium 3 EPUB reader
-        // FolioReader has been replaced with Readium 3 (org.readium.kotlin-toolkit)
-        // Full Readium 3 integration to be implemented
         isTxtReaderActive = false
         binding.txtScrollView.hide()
         binding.pdfView.hide()
-        toast("EPUB reader is being upgraded. Coming soon.")
-        binding.progressLoading.hide()
+        binding.progressLoading.show()
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val httpClient = DefaultHttpClient()
+                val assetRetriever = AssetRetriever(requireContext().contentResolver, httpClient)
+                val publicationOpener = PublicationOpener(
+                    DefaultPublicationParser(requireContext(), httpClient, assetRetriever, null)
+                )
+
+                val url = file.toUrl()
+                val asset = assetRetriever.retrieve(url).let {
+                    if (it.isFailure) throw Exception("Failed to retrieve EPUB asset")
+                    it.getOrNull()!!
+                }
+                val pub = publicationOpener.open(asset, allowUserInteraction = false).let {
+                    if (it.isFailure) throw Exception("Failed to open EPUB")
+                    it.getOrNull()!!
+                }
+
+                publication = pub
+
+                val navigatorFactory = EpubNavigatorFactory(pub)
+                val fragmentFactory = navigatorFactory.createFragmentFactory(initialLocator = null)
+
+                childFragmentManager.fragmentFactory = fragmentFactory
+                childFragmentManager.commitNow {
+                    replace(
+                        R.id.reader_container,
+                        EpubNavigatorFragment::class.java,
+                        bundleOf(),
+                        "epub_navigator"
+                    )
+                }
+
+                (childFragmentManager.findFragmentByTag("epub_navigator") as? EpubNavigatorFragment)
+                    ?.let { nav ->
+                        // Hide bars so they don't intercept touches
+                        if (viewModel.barsVisible.value) viewModel.toggleBars()
+
+                        // Wire up tap to toggle bars
+                        nav.addInputListener(object : org.readium.r2.navigator.input.InputListener {
+                            override fun onTap(event: org.readium.r2.navigator.input.TapEvent): Boolean {
+                                viewModel.toggleBars()
+                                return true
+                            }
+                        })
+
+                        viewLifecycleOwner.lifecycleScope.launch {
+                            nav.currentLocator.collect { locator ->
+                                val index = pub.readingOrder.indexOfFirst { link -> link.href.toString() == locator.href.toString() }
+                                if (index >= 0) viewModel.onPageChanged(index, pub.readingOrder.size)
+                            }
+                        }
+                    }
+
+                binding.progressLoading.hide()
+
+            } catch (e: Exception) {
+                binding.progressLoading.hide()
+                showError("EPUB error: ${e.message}")
+            }
+        }
     }
 
     // ═══════════════════════════════════

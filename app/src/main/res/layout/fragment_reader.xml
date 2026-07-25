@@ -10,9 +10,15 @@
 
     <!-- ── Reader Content Container ── -->
     <FrameLayout
-        android:id="@+id/reader_container"
+        android:id="@+id/reader_content_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <!-- EPUB Reader (Readium 3) -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/reader_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <!-- PDF View -->
         <com.github.barteksc.pdfviewer.PDFView
