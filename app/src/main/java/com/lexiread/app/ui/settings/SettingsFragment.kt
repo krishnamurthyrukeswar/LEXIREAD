@@ -1,7 +1,9 @@
 package com.lexiread.app.ui.settings
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -59,6 +61,20 @@ class SettingsFragment : Fragment() {
                 "You are using LexiRead offline",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        binding.tvRateUs.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://github.com/krishnamurthyrukeswar/LEXIREAD"))
+            startActivity(intent)
+        }
+
+        binding.tvPrivacyPolicy.setOnClickListener {
+            com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Privacy Policy")
+                .setMessage("LexiRead does not collect or share any personal data. All your books and reading progress are stored locally on your device.")
+                .setPositiveButton("OK", null)
+                .show()
         }
     }
 
@@ -211,7 +227,7 @@ class SettingsFragment : Fragment() {
                             4 -> binding.chipThemeCustom.isChecked = true
                             else -> binding.chipThemeLight.isChecked = true
                         }
-                        binding.customColorsContainer.visibility =
+                        binding.layoutCustomColors.visibility =
                             if (theme == 4) View.VISIBLE else View.GONE
                         updatePreviewTheme(theme)
                         isInitializing = false
