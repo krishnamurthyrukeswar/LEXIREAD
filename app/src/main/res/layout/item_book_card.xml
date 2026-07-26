@@ -1,112 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="@dimen/radius_lg"
-    app:cardElevation="2dp"
-    app:strokeWidth="1dp"
-    app:strokeColor="#10000000"
-    style="@style/Widget.Material3.CardView.Elevated">
+    android:orientation="vertical"
+    android:layout_margin="6dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Neumorphic card shell -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_neuo_card"
+        android:padding="16dp"
+        android:minHeight="200dp"
+        android:elevation="2dp">
 
-        <!-- Book Cover -->
-        <ImageView
-            android:id="@+id/iv_book_cover"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:contentDescription="@string/library"
-            android:scaleType="centerCrop"
-            app:layout_constraintDimensionRatio="2:3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_lexiread_launcher" />
-
-        <!-- Format badge (PDF / EPUB) -->
+        <!-- Format badge pill -->
         <TextView
             android:id="@+id/tv_format"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:color/black"
-            android:backgroundTint="?attr/colorPrimary"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="2dp"
-            android:textColor="?attr/colorOnPrimary"
+            android:background="@drawable/bg_format_badge"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:textColor="#FF6B4C2A"
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="PDF" />
+            android:letterSpacing="0.08"
+            tools:text="EPUB" />
 
-        <!-- Book Title -->
+        <!-- Push content to bottom -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp" />
+
+        <!-- Hidden cover for Glide compatibility -->
+        <ImageView
+            android:id="@+id/iv_book_cover"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:contentDescription="@string/library" />
+
+        <!-- Title -->
         <TextView
             android:id="@+id/tv_book_title"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            android:paddingHorizontal="@dimen/spacing_sm"
-            android:paddingTop="@dimen/spacing_sm"
-            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_book_cover"
-            tools:text="The Great Gatsby" />
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#FF2C1A08"
+            android:lineSpacingMultiplier="1.2"
+            tools:text="The Silent Patient" />
 
         <!-- Author -->
         <TextView
             android:id="@+id/tv_book_author"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:paddingHorizontal="@dimen/spacing_sm"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_book_title"
-            tools:text="F. Scott Fitzgerald" />
+            android:textSize="12sp"
+            android:textColor="#FF9A8B7A"
+            tools:text="Alex Michaelides" />
 
-        <!-- Progress Bar -->
+        <!-- Progress slider line with knob feel -->
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progress_bar"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_sm"
-            android:paddingHorizontal="@dimen/spacing_sm"
-            app:indicatorColor="?attr/colorPrimary"
-            app:trackColor="?attr/colorSurfaceVariant"
+            android:layout_marginTop="14dp"
+            app:indicatorColor="#FF6B4C2A"
+            app:trackColor="#FFD4C9B8"
             app:trackCornerRadius="4dp"
             app:trackThickness="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_book_author"
-            tools:progress="47" />
+            tools:progress="25" />
 
         <!-- Percentage -->
         <TextView
             android:id="@+id/tv_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/spacing_sm"
-            android:paddingBottom="@dimen/spacing_sm"
-            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
-            android:textColor="?attr/colorPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/progress_bar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="47%" />
+            android:layout_marginTop="6dp"
+            android:textSize="11sp"
+            android:textColor="#FF9A8B7A"
+            tools:text="25%" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

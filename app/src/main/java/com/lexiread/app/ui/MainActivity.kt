@@ -62,9 +62,9 @@ class MainActivity : AppCompatActivity() {
             )
             v.setPadding(
                 systemBars.left,
-                systemBars.top,
+                0,
                 systemBars.right,
-                systemBars.bottom
+                0
             )
             insets
         }
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> {
                     binding.bottomNavigation.visibility = android.view.View.VISIBLE
-                    supportActionBar?.show()
+                    supportActionBar?.hide()
                 }
             }
         }

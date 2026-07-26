@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer dark shadow inset -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="50dp" />
+            <solid android:color="#FFD4C9B8" />
+        </shape>
+    </item>
+    <!-- Inner highlight -->
+    <item android:left="1dp" android:top="1dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="50dp" />
+            <solid android:color="#FFFFFFFF" />
+        </shape>
+    </item>
+    <!-- Center fill -->
+    <item android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="50dp" />
+            <solid android:color="#FFEEE9E0" />
+        </shape>
+    </item>
+</layer-list>

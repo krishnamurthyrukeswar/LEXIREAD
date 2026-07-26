@@ -41,7 +41,8 @@
         <item name="colorOutlineVariant">@color/outline_variant</item>
 
         <!-- Status bar & edge-to-edge -->
-        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:statusBarColor">#FFF0EBE0</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     </style>

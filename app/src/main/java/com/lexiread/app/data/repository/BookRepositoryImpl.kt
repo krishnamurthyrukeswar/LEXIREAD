@@ -103,17 +103,21 @@ class BookRepositoryImpl @Inject constructor(
         val supportedFormats = listOf("PDF", "EPUB", "TXT")
         if (extension !in supportedFormats) return@withContext null
 
+        // ── Duplicate check ──
+        val nameWithoutExtension = rawName.substringBeforeLast('.')
+        val parts = parseFileName(nameWithoutExtension)
+        val title = parts.first
+        val author = parts.second
+        val existingBook = bookDao.findBookByTitle(title)
+        if (existingBook != null) {
+            return@withContext existingBook.toDomain()
+        }
+
         val bookId = UUID.randomUUID().toString()
         val internalFileName = "${bookId}.${extension.lowercase()}"
 
         val filePath = fileManager.copyFileToInternal(uri, internalFileName)
             ?: return@withContext null
-
-        // Extract title and author from filename
-        val nameWithoutExtension = rawName.substringBeforeLast('.')
-        val parts = parseFileName(nameWithoutExtension)
-        val title = parts.first
-        val author = parts.second
 
         val fileSize = fileManager.getFileSize(uri)
 

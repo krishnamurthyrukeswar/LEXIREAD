@@ -102,7 +102,8 @@ class HomeFragment : Fragment() {
 
         searchAdapter = BookAdapter(
             onBookClick = { book ->
-                binding.searchView.hide()
+                binding.rvSearchResults.hide()
+                binding.searchBar.text?.clear()
                 viewModel.openBook(book)
             },
             onBookLongClick = { book, anchor -> showContextMenu(book, anchor) }
@@ -132,14 +133,15 @@ class HomeFragment : Fragment() {
     // ── Search ──
 
     private fun setupSearch() {
-        binding.searchView.editText.addTextChangedListener { text ->
+        binding.searchBar.addTextChangedListener { text ->
             val query = text?.toString() ?: ""
             viewModel.setSearchQuery(query)
+            binding.rvSearchResults.visibility =
+                if (query.isNotEmpty()) View.VISIBLE else View.GONE
         }
 
-        // Key listener for search submit
-        binding.searchView.editText.setOnEditorActionListener { _, _, _ ->
-            val query = binding.searchView.editText.text?.toString() ?: ""
+        binding.searchBar.setOnEditorActionListener { _, _, _ ->
+            val query = binding.searchBar.text?.toString() ?: ""
             viewModel.setSearchQuery(query)
             false
         }

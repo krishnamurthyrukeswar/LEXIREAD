@@ -47,4 +47,7 @@ interface BookDao {
 
     @Query("SELECT COUNT(*) FROM books")
     fun getBookCount(): Flow<Int>
+
+    @Query("SELECT * FROM books WHERE title = :title LIMIT 1")
+    suspend fun findBookByTitle(title: String): BookEntity?
 }

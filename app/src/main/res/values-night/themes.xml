@@ -39,7 +39,7 @@
         <item name="colorOutlineVariant">#FF49454F</item>
 
         <!-- Status bar -->
-        <item name="android:statusBarColor">#FF121212</item>
+        <item name="android:statusBarColor">#FFF0EBE0</item>
         <item name="android:navigationBarColor">#FF1E1E1E</item>
     </style>
 

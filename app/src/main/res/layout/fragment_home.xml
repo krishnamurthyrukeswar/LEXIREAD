@@ -1,57 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light">
+    android:background="#FFF0EBE0">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- App Title -->
+        <!-- Header -->
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_md"
-            android:layout_marginTop="@dimen/spacing_lg"
-            android:text="LexiRead"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="20dp"
+            android:text="Library"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:textColor="?attr/colorPrimary" />
+            android:letterSpacing="-0.02"
+            android:textColor="#FF2C1A08"
+            android:fontFamily="sans-serif-medium" />
 
         <!-- Search Bar -->
-        <com.google.android.material.search.SearchBar
-            android:id="@+id/search_bar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_md"
-            android:layout_marginTop="@dimen/spacing_md"
-            android:hint="@string/search_books"
-            app:backgroundTint="@color/search_bar_bg"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_neuo_search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
 
-        <!-- Tabs: My Library / Recent -->
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:alpha="0.5"
+                app:tint="#FF6B4C2A"
+                android:contentDescription="Search" />
+
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:hint="Search books, authors..."
+                android:textColorHint="#FF9A8B7A"
+                android:textColor="#FF2C1A08"
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <!-- Pill Tab Row -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_xs"
-            style="@style/Widget.Material3.TabLayout">
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FFE4DDD2"
+            android:padding="4dp">
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/all_books" />
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                app:tabBackground="@android:color/transparent"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabSelectedTextColor="#FF2C1A08"
+                app:tabTextColor="#FF9A8B7A"
+                app:tabTextAppearance="@style/TextAppearance.Material3.LabelLarge"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabIndicatorHeight="0dp">
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/recently_read" />
-        </com.google.android.material.tabs.TabLayout>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All Books" />
 
-        <!-- Book grid -->
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recent" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+        </FrameLayout>
+
+        <!-- Book Grid -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -67,11 +115,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
-                    android:paddingBottom="80dp"
-                    android:padding="@dimen/spacing_sm" />
+                    android:paddingHorizontal="14dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="110dp" />
+
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-            <!-- Loading -->
             <ProgressBar
                 android:id="@+id/progress_loading"
                 android:layout_width="wrap_content"
@@ -79,7 +128,6 @@
                 android:layout_gravity="center"
                 android:visibility="gone" />
 
-            <!-- Empty State -->
             <LinearLayout
                 android:id="@+id/empty_state"
                 android:layout_width="wrap_content"
@@ -87,67 +135,66 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="@dimen/spacing_xl"
+                android:padding="32dp"
                 android:visibility="gone">
 
                 <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="140dp"
-                    android:alpha="0.8"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:alpha="0.2"
                     android:contentDescription="@string/no_books"
                     android:src="@drawable/ic_empty_library"
-                    app:tint="?attr/colorPrimaryContainer" />
+                    app:tint="#FF2C1A08" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_md"
+                    android:layout_marginTop="16dp"
                     android:gravity="center"
-                    android:text="No books yet"
-                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:text="Your library is empty"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="?attr/colorOnSurface" />
+                    android:textColor="#FF2C1A08" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:layout_marginTop="6dp"
                     android:gravity="center"
                     android:text="Tap + to add your first book"
-                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-                    android:textColor="?attr/colorOnSurfaceVariant" />
+                    android:textSize="14sp"
+                    android:textColor="#FF9A8B7A" />
+
             </LinearLayout>
+
         </FrameLayout>
+
     </LinearLayout>
 
-    <!-- SearchView as full-screen overlay anchored to SearchBar -->
-    <com.google.android.material.search.SearchView
-        android:id="@+id/search_view"
+    <!-- Search Results Overlay -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_results"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_anchor="@id/search_bar">
+        android:background="#FFF0EBE0"
+        android:clipToPadding="false"
+        android:padding="12dp"
+        android:visibility="gone" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_search_results"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:padding="@dimen/spacing_sm" />
-
-    </com.google.android.material.search.SearchView>
-
-    <!-- FAB -->
+    <!-- FAB squircle -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/spacing_md"
-        android:layout_marginBottom="160dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
         android:contentDescription="@string/import_book"
-        app:backgroundTint="#1E88E5"
-        app:elevation="@dimen/elevation_lg"
+        app:backgroundTint="#FF3D2B17"
+        app:elevation="8dp"
         app:srcCompat="@android:drawable/ic_input_add"
-        app:tint="@android:color/white" />
+        app:tint="@android:color/white"
+        app:fabSize="normal"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
