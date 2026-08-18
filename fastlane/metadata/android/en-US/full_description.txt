@@ -1,0 +1,1 @@
+LexiRead is an open-source e-reader app that supports EPUB and PDF formats. It offers a clean reading experience with no tracking, no ads, and no internet required for reading local files.
